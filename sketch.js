@@ -46,9 +46,10 @@ function draw() {
   player.x=World.mouseX;
   player.addImage("player.png",playerImg)
   player.scale=0.4
-  if(keyDown("space")&&ballGroup.length===0&&bullet>0){
+  if((touches.length > 0 ||keyDown("space"))&&ballGroup.length===0&&bullet>0){
     bullet--
 blast()
+touches = [];
   }
 
   if(bullet===0&&ballGroup.length===0){
